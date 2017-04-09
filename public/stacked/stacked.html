@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>basic_stacked_charts</title>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+
+</head>
+
+<body>
+  <script type="text/javascript">
+    // Draw areas for day stacked by brand
+    var svg = dimple.newSvg("body", 600, 400);
+    var data = [{
+        "Brand": "Coolio",
+        "Day": "Mon",
+        "Sales Volume": 1000
+      },
+      {
+        "Brand": "Coolio",
+        "Day": "Tue",
+        "Sales Volume": 1100
+      },
+      {
+        "Brand": "Coolio",
+        "Day": "Wed",
+        "Sales Volume": 900
+      },
+      {
+        "Brand": "Coolio",
+        "Day": "Thu",
+        "Sales Volume": 800
+      },
+      {
+        "Brand": "Coolio",
+        "Day": "Fri",
+        "Sales Volume": 850
+      },
+      {
+        "Brand": "Uncoolio",
+        "Day": "Mon",
+        "Sales Volume": 200
+      },
+      {
+        "Brand": "Uncoolio",
+        "Day": "Tue",
+        "Sales Volume": 100
+      },
+      {
+        "Brand": "Uncoolio",
+        "Day": "Wed",
+        "Sales Volume": 300
+      },
+      {
+        "Brand": "Uncoolio",
+        "Day": "Thu",
+        "Sales Volume": 250
+      },
+      {
+        "Brand": "Uncoolio",
+        "Day": "Fri",
+        "Sales Volume": 350
+      }
+    ];
+    var myChart = new dimple.chart(svg, data);
+    myChart.addCategoryAxis("x", "Day");
+    myChart.addMeasureAxis("y", "Sales Volume");
+    myChart.addSeries("Brand", dimple.plot.bar);
+    myChart.draw();
+  </script>
+</body>
+
+</html>
